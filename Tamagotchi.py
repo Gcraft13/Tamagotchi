@@ -1,8 +1,9 @@
-def __init__(self, name):
-    self.name = name
-    self.hunger = 50
-    self.energy = 50
-    self.happiness = 50
+class Pet:
+    def __init__(self, name):
+        self.name = name
+        self.hunger = 50
+        self.energy = 50
+        self.happiness = 50
 
 
 def feed(self):
@@ -23,3 +24,35 @@ def sleep(self):
     self.energy = min(self.energy + 30, 100)
     self.hunger = min(self.hunger + 10, 100)
     print(f"{self.name} took a nap.")
+
+
+def main():
+    name = input("Name your pet")
+    pet = Pet(name)
+
+    while True:
+        print("/nWhat would you like to do?")
+        print("1. Feed")
+        print("2. Play")
+        print("3. Sleep")
+        print("4. Check Status")
+        print("5. Quit")
+
+        choice = input("> ")
+
+        if choice == "1":
+            pet.feed()
+        elif choice == "2":
+            pet.play()
+        elif choice == "3":
+            pet.sleep()
+        elif choice == "4":
+            pet.status()
+        elif choice == "5":
+            pet.status()
+            print(f"Goodbye! {pet.name} will miss you.")
+            break
+        else:
+            print("Invalid choice. Try again")
+
+        pet.time_passes()
