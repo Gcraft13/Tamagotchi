@@ -56,3 +56,21 @@ def main():
             print("Invalid choice. Try again")
 
         pet.time_passes()
+
+
+def status(self):
+    print(f"\n(self.name)'s Status:")
+    print(f"Hunger: {self.hunger}")
+    print(f"Energy: {self.enery}")
+    print(f"Happiness: {self.happiness}")
+
+
+def time_passes(self):
+    self.hunger = min(self.hunger + 5, 100)
+    self.energy = max(self.energy - 5, 0)
+    self.happiness = max(self.happiness - 5, 0)
+
+    if self.hunger >= 100 or self.energy <= 0 or self.happiness <= 0:
+        print(f"\nOh no! {self.name}'s needs weren't met.")
+        print("Game Over!")
+        exit()
